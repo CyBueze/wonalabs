@@ -1,5 +1,5 @@
-# Stage 1: Build the Go binary
-FROM golang:1.22-alpine AS builder
+# Stage 1: Build the Go binary (Updated to Go 1.26 to support modern Templ compilation)
+FROM golang:1.26-alpine AS builder
 WORKDIR /app
 
 # Install the templ tool binary in the environment
