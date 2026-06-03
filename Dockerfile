@@ -1,9 +1,9 @@
-# Stage 1: Build the Go binary (Updated to Go 1.26 to support modern Templ compilation)
+# Stage 1: Build the Go binary
 FROM golang:1.26-alpine AS builder
 WORKDIR /app
 
-# Install the templ tool binary in the environment
-RUN go install github.com/a-h/templ@latest
+# Install the templ tool binary target explicitly
+RUN go install github.com/a-h/templ/cmd/templ@latest
 
 COPY go.mod go.sum ./
 RUN go mod download
